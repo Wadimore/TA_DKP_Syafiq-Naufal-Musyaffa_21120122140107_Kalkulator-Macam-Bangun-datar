@@ -23,10 +23,6 @@ import javax.swing.JTextPane;
 import javax.swing.JScrollPane;
 import java.awt.SystemColor;
 import javax.swing.UIManager;
-import javax.swing.border.MatteBorder;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.LineBorder;
 
 public class TA extends JFrame {
 
@@ -173,6 +169,8 @@ public class TA extends JFrame {
 		Image ImageBg = Icon11.getImage().getScaledInstance(750, 540, Image.SCALE_SMOOTH);
 		ImageIcon Icon12 = new ImageIcon("C:\\Users\\HP\\Desktop\\bahan gui\\backgr.jpg");
 		Image ImageBgr = Icon12.getImage().getScaledInstance(750, 540, Image.SCALE_SMOOTH);
+		ImageIcon Icon13 = new ImageIcon("C:\\Users\\HP\\Desktop\\bahan gui\\undip.png");
+		Image ImageBgri = Icon13.getImage().getScaledInstance(250, 240, Image.SCALE_SMOOTH);
 
 		panelluas = new JPanel();
 		panelluas.setBorder(UIManager.getBorder("RadioButton.border"));
@@ -258,10 +256,6 @@ public class TA extends JFrame {
 				if (jariInput == null) {
 					return;
 				}
-				if (!jariInput.matches("\\d+(\\.\\d+)?")) {
-					outputluas.setText("Salah input");
-					return;
-				}
 
 				try {
 					double jari = Double.parseDouble(jariInput);
@@ -310,10 +304,6 @@ public class TA extends JFrame {
 				if (panjangInput == null || lebarInput == null) {
 					return;
 				}
-				if (!panjangInput.matches("\\d+(\\.\\d+)?") || !lebarInput.matches("\\d+(\\.\\d+)?")) {
-					outputluas.setText("Salah input");
-					return;
-				}
 
 				try {
 					double panjang = Double.parseDouble(panjangInput);
@@ -357,10 +347,6 @@ public class TA extends JFrame {
 				if (sisiInput == null) {
 					return;
 				}
-				if (!sisiInput.matches("\\d+(\\.\\d+)?")) {
-					outputluas.setText("Salah input");
-					return;
-				}
 
 				try {
 					DecimalFormat decimalFormat = new DecimalFormat("#.##");
@@ -393,10 +379,6 @@ public class TA extends JFrame {
 				String tinggiInput = JOptionPane.showInputDialog(null, "Masukkan Tinggi Jajar Genjang:", "Input Tinggi",
 						JOptionPane.QUESTION_MESSAGE);
 				if (alasInput == null || tinggiInput == null) {
-					return;
-				}
-				if (!alasInput.matches("\\d+(\\.\\d+)?") || !tinggiInput.matches("\\d+(\\.\\d+)?")) {
-					outputluas.setText("Salah input");
 					return;
 				}
 
@@ -450,11 +432,6 @@ public class TA extends JFrame {
 				String tinggiInput = JOptionPane.showInputDialog(null, "Masukkan Tinggi Trapesium:", "Input Tinggi",
 						JOptionPane.QUESTION_MESSAGE);
 				if (alasAtasInput == null || alasBawahInput == null || tinggiInput == null) {
-					return;
-				}
-				if (!alasAtasInput.matches("\\d+(\\.\\d+)?") || !alasBawahInput.matches("\\d+(\\.\\d+)?")
-						|| !tinggiInput.matches("\\d+(\\.\\d+)?")) {
-					outputluas.setText("Salah input");
 					return;
 				}
 
@@ -532,11 +509,6 @@ public class TA extends JFrame {
 				if (sisiAInput == null || sisiBInput == null || sisiCInput == null) {
 					return;
 				}
-				if (!sisiAInput.matches("\\d+(\\.\\d+)?") || !sisiBInput.matches("\\d+(\\.\\d+)?")
-						|| !sisiCInput.matches("\\d+(\\.\\d+)?")) {
-					outputkel.setText("Salah input");
-					return;
-				}
 
 				try {
 					DecimalFormat decimalFormat = new DecimalFormat("#.##");
@@ -581,10 +553,6 @@ public class TA extends JFrame {
 				String jariInput = JOptionPane.showInputDialog(null, "Masukkan Panjang Jari-jari Lingkaran:",
 						"Input Jari-jari", JOptionPane.QUESTION_MESSAGE);
 				if (jariInput == null) {
-					return;
-				}
-				if (!jariInput.matches("\\d+(\\.\\d+)?")) {
-					outputkel.setText("Salah input");
 					return;
 				}
 
@@ -636,10 +604,6 @@ public class TA extends JFrame {
 				if (panjangInput == null || lebarInput == null) {
 					return;
 				}
-				if (!panjangInput.matches("\\d+(\\.\\d+)?") || !lebarInput.matches("\\d+(\\.\\d+)?")) {
-					outputkel.setText("Salah input");
-					return;
-				}
 
 				try {
 					DecimalFormat decimalFormat = new DecimalFormat("#.##");
@@ -687,7 +651,8 @@ public class TA extends JFrame {
 					}
 					if (!sisiInput.matches("\\d+(\\.\\d+)?")) {
 						outputkel.setText("Salah input");
-					} else {
+					}
+					else {
 						validInput = true;
 						try {
 							DecimalFormat decimalFormat = new DecimalFormat("#.##");
@@ -727,12 +692,6 @@ public class TA extends JFrame {
 						JOptionPane.QUESTION_MESSAGE);
 				if (alasJajargenjangInput == null || tinggiJajargenjangInput == null
 						|| sisiMiringJajargenjangInput == null) {
-					return;
-				}
-				if (!alasJajargenjangInput.matches("\\d+(\\.\\d+)?")
-						|| !tinggiJajargenjangInput.matches("\\d+(\\.\\d+)?")
-						|| !sisiMiringJajargenjangInput.matches("\\d+(\\.\\d+)?")) {
-					outputkel.setText("Salah input");
 					return;
 				}
 
@@ -786,12 +745,6 @@ public class TA extends JFrame {
 						"Input Sisi D", JOptionPane.QUESTION_MESSAGE);
 				if (sisiATrapesiumInput == null || sisiBTrapesiumInput == null || sisiCTrapesiumInput == null
 						|| sisiDTrapesiumInput == null) {
-					return;
-				}
-				if (!sisiATrapesiumInput.matches("\\d+(\\.\\d+)?") || !sisiBTrapesiumInput.matches("\\d+(\\.\\d+)?")
-						|| !sisiCTrapesiumInput.matches("\\d+(\\.\\d+)?")
-						|| !sisiDTrapesiumInput.matches("\\d+(\\.\\d+)?")) {
-					outputkel.setText("Salah input");
 					return;
 				}
 
@@ -925,6 +878,13 @@ public class TA extends JFrame {
 		deskripsi.setEditable(false);
 		deskripsi.setBounds(10, 401, 664, 73);
 		panelinfo.add(deskripsi);
+		
+		JLabel backgroundinfo = new JLabel("");
+		backgroundinfo.setIcon(new ImageIcon(ImageBgri));
+		backgroundinfo.setVerticalAlignment(SwingConstants.CENTER);
+		backgroundinfo.setHorizontalAlignment(SwingConstants.CENTER);
+		backgroundinfo.setBounds(0, 0, 684, 540);
+		panelinfo.add(backgroundinfo);
 
 		JLabel background = new JLabel("");
 		background.setIcon(new ImageIcon(imageB));
